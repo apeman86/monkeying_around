@@ -1,0 +1,41 @@
+{
+  "name": "node-play",
+  "version": "0.0.1",
+  "description": "Mike's playground for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Mike Nalbandian",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^1.26.2",
+    "express": "^4.15.5",
+    "socket.io": "^2.0.3",
+    "typescript": "^2.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.31",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-tslint": "^8.1.2",
+    "gulp-typescript": "^3.2.2",
+    "jasmine": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "merge-stream": "^1.0.1",
+    "require-dir": "^0.3.2",
+    "run-sequence": "^2.2.0",
+    "symbol-observable": "^1.0.4",
+    "tslint": "^5.7.0",
+    "typescript": "2.2.2"
+  }
+}

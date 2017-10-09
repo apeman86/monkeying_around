@@ -25,6 +25,13 @@
       socket.on('placed', function(data){
         console.log(data);
       });
+      socket.on('turn', function(data){
+        if (data.error) {
+          console.log(data.error);
+        } else {
+          console.log(data.message);
+        }
+      });
       function pass(){
         socket.emit('pass', true);
       }

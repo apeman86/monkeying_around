@@ -8,16 +8,14 @@ let port: number = process.env.PORT || config.get('port');
 let app;
 let io;
 let server;
-let engine;
-  
+
 app = express();
 server = http.createServer(app);
-server.engine;
 io = socket(server);
-app.get('/', function(request, response){
+app.get('/', function(request, response): any {
   response.sendFile(__dirname + '/templates/index.html');
   console.log(server.engine);
-  if(server.engine == null) {
+  if (server.engine == null) {
     server.engine = new DungeonEngine(io);
   } else {
     server.engine.addUser(io);

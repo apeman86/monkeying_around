@@ -14,7 +14,6 @@ server = http.createServer(app);
 io = socket(server);
 app.get('/', function(request, response): any {
   response.sendFile(__dirname + '/templates/index.html');
-  console.log(server.engine);
   if (server.engine == null) {
     server.engine = new DungeonEngine(io);
   } else {

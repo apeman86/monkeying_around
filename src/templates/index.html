@@ -1,9 +1,17 @@
 <html>
   <head>
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/lib/shim.min.js"></script>
+    
+    <script src="js/lib/zone.js"></script>
+    <!-- <script src="js/Reflect.js"></script> -->
+    <script src="js/lib/system.src.js"></script>
+    <script src="js/systemjs.config.js"></script>
+    <!--The Angular2 bootstrap runners are within this file-->
+    <script src="js/bootstrap-main.js"></script>
   </head>
   <body>
-    <script>
+    <main-app></main-app>
+    <!-- <script>
       var socket = io('http://localhost:9009');
       socket.keptCards = [];
       socket.on('welcome', function(data){
@@ -52,6 +60,6 @@
     <button onclick="pass();">Pass</button>
     <button onclick="pull();">Pull</button>
     <button onclick="keep();">Keep</button>
-    <button onclick="place();">Place</button>
+    <button onclick="place();">Place</button> -->
   </body>
 </html>

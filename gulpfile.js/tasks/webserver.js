@@ -6,7 +6,7 @@ var config = require('config');
 
 var webserverTask = function () {
     return nodemon({
-        script: 'dist/server.js',
+        script: 'dist/server/server.js',
         watch: 'dist',
         ext: 'js json',
         env: {

@@ -9,10 +9,25 @@
   "author": "Mike Nalbandian",
   "license": "ISC",
   "dependencies": {
+    "@angular/common": "~4.3.4",
+    "@angular/compiler": "~4.3.4",
+    "@angular/core": "~4.3.4",
+    "@angular/forms": "~4.3.4",
+    "@angular/http": "~4.3.4",
+    "@angular/platform-browser": "~4.3.4",
+    "@angular/platform-browser-dynamic": "~4.3.4",
+    "@angular/router": "~4.3.4",
+    "@types/socket.io-client": "^1.4.31",
+    "angular-in-memory-web-api": "~0.3.0",
     "config": "^1.26.2",
+    "core-js": "^2.4.1",
     "express": "^4.15.5",
+    "rxjs": "5.4.3",
     "socket.io": "^2.0.3",
-    "typescript": "^2.5.3"
+    "socket.io-client": "^2.0.4",
+    "systemjs": "0.19.40",
+    "typescript": "^2.5.3",
+    "zone.js": "^0.8.4"
   },
   "devDependencies": {
     "@types/node": "^8.0.31",

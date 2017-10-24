@@ -3,10 +3,11 @@
   flex-direction: column;
   flex: 1 1 auto;
   margin: 5px;
-  border: 2px;
+  border: 1px;
   border-color: black;
   border-style: solid;
   padding: 5px;
+  box-shadow: 5px 5px 5px grey;
 
   p.title {
     font-weight: bold

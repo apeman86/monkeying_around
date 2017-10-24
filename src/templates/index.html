@@ -1,7 +1,7 @@
 <html>
   <head>
     <script src="js/lib/shim.min.js"></script>
-    
+    <link rel="stylesheet" href="css/main.css">
     <script src="js/lib/zone.js"></script>
     <!-- <script src="js/Reflect.js"></script> -->
     <script src="js/lib/system.src.js"></script>
@@ -11,55 +11,5 @@
   </head>
   <body>
     <main-app></main-app>
-    <!-- <script>
-      var socket = io('http://localhost:9009');
-      socket.keptCards = [];
-      socket.on('welcome', function(data){
-        console.log(data)}
-      );
-      socket.on('disconnect', function(){
-        socket.disconnect();
-      });
-      socket.on('passed', function(data){
-        console.log(data);
-      });
-      socket.on('pulled', function(data){
-        console.log(data);
-        socket.curCard = data;
-      });
-      socket.on('kept', function(data){
-        console.log(data);
-      });
-      socket.on('placed', function(data){
-        console.log(data);
-      });
-      socket.on('turn', function(data){
-        if (data.error) {
-          console.log(data.error);
-        } else {
-          console.log(data.message);
-        }
-      });
-      function pass(){
-        socket.emit('pass', true);
-      }
-      function pull(){
-        socket.emit('pull', 1);
-      }
-      function keep(){
-        socket.keptCards.push(socket.curCard);
-        socket.emit('keep', socket.curCard);
-        socket.curCard = '';
-      }
-      function place(){
-        socket.emit('place', socket.curCard)
-        socket.curCard = '';
-      }
-    </script>
-
-    <button onclick="pass();">Pass</button>
-    <button onclick="pull();">Pull</button>
-    <button onclick="keep();">Keep</button>
-    <button onclick="place();">Place</button> -->
   </body>
 </html>

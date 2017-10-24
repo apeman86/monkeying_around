@@ -15,7 +15,7 @@ export class WebsocketService {
   connect(): Rx.Subject<MessageEvent> {
     // If you aren't familiar with environment variables then
     // you can hard code `environment.ws_url` as `http://localhost:5000`
-    this.socket = io('http://192.168.1.13:9009');
+    this.socket = io(window.location.host);
 
     // We define our observable which will observe any incoming messages
     // from our socket.io server.

@@ -30,7 +30,9 @@ export class MainApp implements OnInit {
       }
       if('pulled' === move.type){
         console.log(move);
-        this.currentPlayerHandContext.currentCardInHand = move.card;
+        if(this.currentPlayerHandContext.uid === move.uid){
+          this.currentPlayerHandContext.currentCardInHand = move.card;
+        }
       }
       if('kept' === move.type){
         console.log(move);

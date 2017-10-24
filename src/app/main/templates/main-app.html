@@ -1,9 +1,9 @@
 <h1>Node Play Game</h1>
 <h4>Number of players: {{numberOfPlayers}}</h4>
-<div>
+<div class="player-controls">
   <player-hand [playerHandContext]="currentPlayerHandContext" ></player-hand>
+  <button (click)="pass();">Pass</button>
+  <button (click)="pull();">Pull</button>
+  <button (click)="keep();">Keep</button>
+  <button (click)="place();">Place</button>
 </div>
-<button (click)="pass();">Pass</button>
-<button (click)="pull();">Pull</button>
-<button (click)="keep();">Keep</button>
-<button (click)="place();">Place</button>

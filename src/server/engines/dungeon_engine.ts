@@ -34,7 +34,9 @@ export class DungeonEngine extends BaseEngine {
         
         client.on('disconnect', function(): void {
           client.disconnect();
-          delete this.clients[client.id];
+          if(this.clients && this.clients[client.id]){
+            delete this.clients[client.id];
+          }
         });
         this.initialized = client.id;
         client.on('move', (data) => {
@@ -82,7 +84,7 @@ export class DungeonEngine extends BaseEngine {
         this.players.push(new Player(client.id, this.players.length));
         this.currentPlayerUid = this.players[this.currentPlayerIndex].getUid();
         client.broadcast.emit('move', {type: 'new_user', uid: client.id});
-        client.emit('move', {message:'Welcome In!', type: 'welcome', count: this.players.length});
+        client.emit('move', {uid: client.id, message:'Welcome In!', type: 'welcome', count: this.players.length});
       }
     });
   }
@@ -118,16 +120,16 @@ export class DungeonEngine extends BaseEngine {
   }
 
   placed(client): void {
-    client.emit('move', {id: client.id, card: this.currentlyPulledCard, type:'placed'});
-    client.broadcast.emit('move', {id: client.id, card: this.currentlyPulledCard , type:'placed'});
+    client.emit('move', {uid: client.id, card: this.currentlyPulledCard, type:'placed'});
+    client.broadcast.emit('move', {uid: client.id, card: this.currentlyPulledCard , type:'placed'});
     this.currentlyPulledCard = null;
     this.progressTurn();
     this.clients[this.currentPlayerUid].emit('move', {message: 'Your Turn!', type:'turn'});
   }
 
   kept(client): void {
-    client.emit('move', {id: client.id, card: this.currentlyPulledCard, type:'kept'});
-    client.broadcast.emit('move', {id: client.id, card: this.currentlyPulledCard, type:'kept'});
+    client.emit('move', {uid: client.id, card: this.currentlyPulledCard, type:'kept'});
+    client.broadcast.emit('move', {uid: client.id, card: this.currentlyPulledCard, type:'kept'});
     this.currentlyPulledCard = null;
     this.progressTurn();
     this.clients[this.currentPlayerUid].emit('move', {message: 'Your Turn!', type:'turn'});
@@ -139,12 +141,12 @@ export class DungeonEngine extends BaseEngine {
     this.currentlyPulledCard = card;
     console.log(card);
     client.pulledCards.push(card);
-    client.emit('move', {id: client.id, card: card, type:'pulled'});
-    client.broadcast.emit('move', {id: client.id, card: card, type:'pulled'});
+    client.emit('move', {uid: client.id, card: card, type:'pulled'});
+    client.broadcast.emit('move', {uid: client.id, card: card, type:'pulled'});
   }
 
   passed(client): void {
-    client.emit('move', {id: client.id, passed: true, type:'passed'});
-    client.broadcast.emit('move', {id: client.id, passed: true, type:'passed'});
+    client.emit('move', {uid: client.id, passed: true, type:'passed'});
+    client.broadcast.emit('move', {uid: client.id, passed: true, type:'passed'});
   }
 }

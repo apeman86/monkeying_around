@@ -1,15 +1,13 @@
-<div id="pulled-card">
-  <div *ngIf="playerHandContext.currentCardInHand">
-    <p>{{playerHandContext.currentCardInHand.title}}</p><p>{{playerHandContext.currentCardInHand.value}}
-  </div>
+<div *ngIf="playerHandContext.currentCardInHand != null" id="pulled-card" [ngClass]="'card'">
+  <p class="title">{{playerHandContext.currentCardInHand.title}}</p><p>{{playerHandContext.currentCardInHand.value}}
 </div>
-<div id="kept-cards">
-    <div *ngFor="let card of playerHandContext.keptCards"><p>{{card.title}}</p><p>{{card.value}}</p></div>
+<div id="kept-cards" class="kept-cards">
+    <div *ngFor="let card of playerHandContext.keptCards" [ngClass]="'card'"><p class="title">{{card.title}}</p><p>{{card.value}}</p></div>
 </div>
-<div id="taken-pieces">
-    <div *ngFor="let piece of playerHandContext.pieces"><p>{{piece.name}}</p><p>{{piece.description}}</p></div>
+<div id="taken-pieces" class="taken-pieces">
+    <div *ngFor="let piece of playerHandContext.pieces" [ngClass]="'card'"><p class="title">{{piece.name}}</p><p>{{piece.description}}</p></div>
 </div>
-<div id="game-stats">
-  <p id="wins">{{playerHandContext.wins}}</p>
-  <p id="losses">{{playerHandContext.losses}}</p>  
+<div id="game-stats" class="game-stats">
+  <p id="wins">Wins: {{playerHandContext.wins}}</p>
+  <p id="losses">Losses: {{playerHandContext.losses}}</p>  
 </div>

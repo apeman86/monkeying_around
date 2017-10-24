@@ -1,0 +1,39 @@
+@charset 'utf-8';
+//Local variable and theme settings
+$app-vars: (
+
+);
+
+.player-controls{
+  position: fixed;
+  bottom: 0;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 10px;
+  width: 40%;
+}
+
+player-hand {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .kept-cards {
+    flex-direction: row;
+    justify-content: space-between;
+    display: flex;
+  }
+  .taken-pieces {
+    flex-direction: row;
+    justify-content: space-between;
+    display: flex;
+  }
+}
+
+game-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@import 'components/cards';

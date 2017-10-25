@@ -22,7 +22,7 @@ app.get('/', function(request, response): any {
   }
 });
 // static content
-app.get(/\/(app|css|fonts|templates|img|js|server|ps-favicon.ico)\//, (req: express.Request, res: express.Response) => {
+app.get(/\/(app|css|fonts|templates|images|js|server|ps-favicon.ico)\//, (req: express.Request, res: express.Response) => {
   let path = req.path;
   res.sendFile(path, { root: 'dist' });
 });

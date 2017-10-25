@@ -20,8 +20,8 @@ var copyTask = function () {
 
         // Images
         {
-            src: 'src/img/**/*',
-            dest: 'img'
+            src: 'src/images/**/*',
+            dest: 'images'
         },
 
         // Favicon

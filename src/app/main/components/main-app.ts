@@ -3,22 +3,28 @@ import { PlayerHandContext } from '../models/player-hand-context';
 import { MoveEventService } from '../services/move-service';
 import { MoveEvent } from '../models/move-event';
 import { Subject } from 'rxjs';
+import { CommonBoardContext } from '../models/common-board-context';
+import { Card } from '../models/card';
 
 @Component({
   selector: 'main-app',
   templateUrl: '../app/main/templates/main-app.html'
 })
 export class MainApp implements OnInit {
+  public commonBoardContext: CommonBoardContext;
 
   public currentPlayerHandContext: PlayerHandContext;
   public otherPlayerHandContexts: Array<PlayerHandContext>;
   public numberOfPlayers: number;
   constructor(@Inject(MoveEventService) private moveService: MoveEventService) {
     this.currentPlayerHandContext = new PlayerHandContext();
+    this.commonBoardContext = new CommonBoardContext();
     this.numberOfPlayers = 1;
   }
 
   ngOnInit(): void {
+    let character = new Card('Warrior', '10', 'images/characters/warrior.svg');
+    this.commonBoardContext.currentCharacter = character;
     this.moveService.moves.subscribe((move: MoveEvent) => {
       if('welcome' === move.type){
         console.log(move)

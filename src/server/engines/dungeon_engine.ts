@@ -31,16 +31,15 @@ export class DungeonEngine extends BaseEngine {
         client.pulledCards = [];
         client.pile = [];
         this.clients[client.id] = client;
-        
+
         client.on('disconnect', function(): void {
           client.disconnect();
-          if(this.clients && this.clients[client.id]){
+          if(this.clients && this.clients[client.id]) {
             delete this.clients[client.id];
           }
         });
         this.initialized = client.id;
         client.on('move', (data) => {
-          console.log('Move: ', JSON.parse(data).type);
           let move: MoveEvent = JSON.parse(data);
           if(move.type === 'pass') {
             if (this.myTurn(client.id)) {
@@ -50,10 +49,8 @@ export class DungeonEngine extends BaseEngine {
             }
           }
           if(move.type === 'pull') {
-            console.log('Begin Pulling card!')
             if (this.myTurn(client.id)) {
               if (this.currentlyPulledCard == null ) {
-                console.log('Pulling card!')
                 this.pulled(client);
               }
             } else {
@@ -146,7 +143,7 @@ export class DungeonEngine extends BaseEngine {
   }
 
   passed(client): void {
-    client.emit('move', {uid: client.id, passed: true, type:'passed'});
-    client.broadcast.emit('move', {uid: client.id, passed: true, type:'passed'});
+    client.emit('move', {uid: client.id, passed: true, type:'passed'} );
+    client.broadcast.emit('move', {uid: client.id, passed: true, type:'passed'} );
   }
 }

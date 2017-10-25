@@ -4,6 +4,7 @@ import { MainApp } from './components/main-app';
 import { PlayerHand } from './components/player-hand';
 import { MoveEventService } from './services/move-service';
 import { WebsocketService } from './services/web-sockets-service';
+import { CommonBoard } from './components/common-board';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { WebsocketService } from './services/web-sockets-service';
   ],
   declarations: [
     MainApp,
-    PlayerHand
+    PlayerHand,
+    CommonBoard
   ],
   providers: [ WebsocketService, MoveEventService ],
   bootstrap: [
